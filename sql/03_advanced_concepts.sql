@@ -81,3 +81,45 @@ DELIMITER ;
 
 -- =====================================================================
 -- 2. TRIGGERS
+-- =====================================================================
+
+DROP TRIGGER IF EXISTS trg_validate_exam_marks_insert;
+DELIMITER $$
+CREATE TRIGGER trg_validate_exam_marks_insert
+BEFORE INSERT ON exam_results
+FOR EACH ROW
+BEGIN
+    IF NEW.marks_obtained < 0.00 OR NEW.marks_obtained > 100.00 THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Trigger Exception: Examination marks must be strictly between 0 and 100.';
+    END IF;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS trg_validate_exam_marks_update;
+DELIMITER $$
+CREATE TRIGGER trg_validate_exam_marks_update
+BEFORE UPDATE ON exam_results
+FOR EACH ROW
+BEGIN
+    IF NEW.marks_obtained < 0.00 OR NEW.marks_obtained > 100.00 THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Trigger Exception: Examination marks must be strictly between 0 and 100.';
+    END IF;
+END$$
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS trg_update_registration_status;
+DELIMITER $$
+CREATE TRIGGER trg_update_registration_status
+AFTER INSERT ON exam_results
+FOR EACH ROW
+BEGIN
+    UPDATE course_registrations
+    SET status = 'Completed'
+    WHERE registration_id = NEW.registration_id;
+END$$
+DELIMITER ;
+
+-- =====================================================================
+-- 3. VIEWS
