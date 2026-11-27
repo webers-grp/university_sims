@@ -30,3 +30,9 @@ INSERT INTO courses (course_code, course_title, credit_hours, department_id, ins
 -- Engineering Courses (Dept 2)
 ('CSE101', 'Computer Systems Engineering', 4, 2, 2, '100'),
 
+
+-- Business Courses (Dept 3)
+('BIT101', 'Business Information Technology', 3, 3, 3, '100'),
+('ECO101', 'Economics', 3, 3, 3, '100'),
+('FIN101', 'Finance', 3, 3, 3, '200'),
+
