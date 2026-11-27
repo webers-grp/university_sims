@@ -1,0 +1,17 @@
+# Database binary files & internal sockets
+db_data/
+*.sock
+*.pid
+*.err
+*.log
+
+# Backups (optional: keep if you want initial sql backup, otherwise ignore extra dumps)
+# backups/*.sql
+
+# OS & IDE metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
