@@ -20,3 +20,9 @@ INSERT INTO instructors (instructor_code, first_name, last_name, email, phone, d
 
 -- 3. SEED COURSES (All 12 required courses mapped to their departments)
 INSERT INTO courses (course_code, course_title, credit_hours, department_id, instructor_id, academic_level) VALUES
+
+-- Computing Courses (Dept 1)
+('IT101', 'Information Technology', 3, 1, 1, '100'),
+('CS101', 'Computer Science', 4, 1, 1, '100'),
+('SE101', 'Software Engineering', 4, 1, 1, '200'),
+
