@@ -17,3 +17,6 @@ INSERT INTO instructors (instructor_code, first_name, last_name, email, phone, d
 ('INS-104', 'Dr. Maria', 'Montessori', 'm.montessori@kyu.ac.ke', '+254-711-010104', 4, 'ED-102', 'Active'),
 ('INS-105', 'Dr. Florence', 'Nightingale', 'f.nightingale@kyu.ac.ke', '+254-711-010105', 5, 'MC-012', 'Active');
 
+
+-- 3. SEED COURSES (All 12 required courses mapped to their departments)
+INSERT INTO courses (course_code, course_title, credit_hours, department_id, instructor_id, academic_level) VALUES
