@@ -26,3 +26,7 @@ INSERT INTO courses (course_code, course_title, credit_hours, department_id, ins
 ('CS101', 'Computer Science', 4, 1, 1, '100'),
 ('SE101', 'Software Engineering', 4, 1, 1, '200'),
 
+
+-- Engineering Courses (Dept 2)
+('CSE101', 'Computer Systems Engineering', 4, 2, 2, '100'),
+
